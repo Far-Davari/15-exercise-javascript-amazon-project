@@ -142,12 +142,17 @@ export function renderOrderSummary() {
 }
 
 const today = dayjs();
-const deliveryDate = today.subtract(
-  1,
-  "months"
-);
-const dateString = deliveryDate.format(
-  "MMMM D"
-);
 
-console.log(dateString)
+
+function isWeekend(date) {
+  const dayOfWeek = date.format("dddd");
+  return dayOfWeek === "Saturday" || dayOfWeek === "Sunday";
+}
+
+let date = dayjs();
+console.log(date);
+console.log(isWeekend(date));
+date = dayjs().add("5", "day")
+console.log(date);
+
+console.log(isWeekend(date));
