@@ -5,6 +5,7 @@ import { hello } from "https://unpkg.com/supersimpledev@1.0.1/hello.esm.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
+import isSatSun from "../utils/isWeekend.js";
 
 export function renderOrderSummary() {
   let cartSummaryHTML = "";
@@ -141,18 +142,12 @@ export function renderOrderSummary() {
     });
 }
 
-const today = dayjs();
 
-
-function isWeekend(date) {
-  const dayOfWeek = date.format("dddd");
-  return dayOfWeek === "Saturday" || dayOfWeek === "Sunday";
-}
 
 let date = dayjs();
 console.log(date);
-console.log(isWeekend(date));
+console.log(isSatSun(date));
 date = dayjs().add("5", "day")
 console.log(date);
 
-console.log(isWeekend(date));
+console.log(isSatSun(date));
