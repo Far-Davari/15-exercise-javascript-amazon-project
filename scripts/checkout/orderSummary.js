@@ -140,3 +140,14 @@ export function renderOrderSummary() {
       })
     });
 }
+
+const today = dayjs();
+const deliveryDate = today.add(
+  5,
+  "days"
+);
+const dateString = deliveryDate.format(
+  "MMMM D"
+);
+
+console.log(dateString)
