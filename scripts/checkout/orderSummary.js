@@ -142,7 +142,7 @@ export function renderOrderSummary() {
 }
 
 const today = dayjs();
-const deliveryDate = today.add(
+const deliveryDate = today.subtract(
   1,
   "months"
 );
