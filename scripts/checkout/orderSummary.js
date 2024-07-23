@@ -143,8 +143,8 @@ export function renderOrderSummary() {
 
 const today = dayjs();
 const deliveryDate = today.add(
-  5,
-  "days"
+  1,
+  "months"
 );
 const dateString = deliveryDate.format(
   "MMMM D"
